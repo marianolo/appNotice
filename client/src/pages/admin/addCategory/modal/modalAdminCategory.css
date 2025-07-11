@@ -1,0 +1,138 @@
+
+.modalCat {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000b3;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modalCat.is-open {
+  display: flex;
+}
+
+
+.modal-container-cat {
+  position: relative;
+  width: 650px;
+  overflow: auto;
+  background-color: #fae1e1;
+  
+  padding: 1rem;
+  border-radius: 20px;
+  transition: 0.2s;
+  padding: 50px;
+  box-shadow: 1px 1px 5px #dd8585;
+}
+
+.modal-container-cat p {
+  text-align: center;
+}
+
+.modal-container-cat input {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background-color: #fac7c7;
+  box-shadow: 1px 1px 5px #dd8585;
+  text-align: center;
+}
+
+.delB {
+  color: #ef4444;
+}
+
+.editB {
+  color: #21a177;
+}
+
+.error-message-modal {
+  padding: 10px 15px;
+  margin: 10px 0px 0px 0px ;
+  border-radius: 4px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.error-category-modal {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #ffa6a6;
+  color: #b91c1c;
+}
+
+.approve-btn-modal {
+  background-color: #10b981;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+  font-size: 17px;
+}
+.approve-btn-modal:hover {
+  background-color: #059669;
+}
+
+.approve-btn-modal a {
+  outline: none;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  padding: 8px 8px 8px 8px;
+}
+
+.cancel-btn-modal {
+  background-color: #ef4444;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  font-size: 17px;
+}
+
+.cancel-btn-modal:hover {
+  background-color: #dc2626;
+}
+
+.modalButtons {
+  margin-top: 17px;
+}
+
+.modalTitle {
+  background-color: #fac7c7;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #dd8585;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+.advertencia {
+  color: #ef4444;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+body {
+  line-height: inherit;
+}
+
+
+
+

@@ -1,0 +1,234 @@
+.filtroMaster {
+  margin: 2rem auto;
+  max-width: 1400px;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 700px;
+}
+
+.filtroContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  width: fit-content; /* Ajusta al contenido */
+  margin: 0 auto; 
+  width: 600px;
+}
+
+.filtro {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.25rem 0;
+  scroll-behavior: smooth;
+}
+
+.filtro::-webkit-scrollbar {
+  display: none;
+}
+
+.filtro button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.filtro button a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a5568;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filtro button:hover a {
+  background: rgba(30, 64, 175, 0.08);
+  color: #1e40af;
+  transform: translateY(-1px);
+}
+
+.filtro button.active a {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  font-weight: 600;
+  box-shadow: 
+    0 2px 8px rgba(67, 97, 238, 0.25),
+    0 1px 3px rgba(67, 97, 238, 0.15);
+}
+
+.filtro button:not(.active) a::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 1.5rem;
+  width: calc(100% - 3rem);
+  height: 2px;
+  background: #1e40af;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.filtro button:not(.active):hover a::after {
+  transform: scaleX(1);
+}
+
+.filtro button:active a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .filtroMaster {
+    padding: 0 1.25rem;
+  }
+  
+  .filtro button a {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .filtroMaster {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+  
+  .filtroContainer {
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 95%; /* Ajuste para móviles */
+  }
+  
+  .filtro {
+    gap: 0.5rem;
+  }
+  
+  .filtro button a {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .filtroMaster {
+    width: 450px;
+  }
+
+  .filtroContainer {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filtroMaster {
+    margin: 1.25rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .filtroContainer {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+  }
+  
+  .filtro button a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .filtro button:not(.active) a::after {
+    bottom: 4px;
+    left: 0.8rem;
+    width: calc(100% - 1.6rem);
+  }
+  
+  .scrollBtn {
+    visibility: hidden;
+  }
+
+  .filtroMaster {
+    width: auto;
+  }
+
+  .filtroContainer {
+    width: 250px;
+  }
+}
+
+@media (max-width: 350px) {
+  .filtroMaster {
+    width: 250px;
+  }
+  
+  .filtroContainer {
+    width: 150px;
+  }
+
+}
+
+.scrollBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #8c9fbe;
+  border-radius: 10px;
+  padding: 15px 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.scrollBtn:hover {
+  /* background-color: #1e40af; */
+  background: rgba(30, 64, 175, 0.08);
+  color: #1e40af;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* transform: translateY(-1px); */
+}
+
+.empty-message-filtroHome {
+    text-align: center;
+  padding: 40px 0;
+  /* color: var(--lighter-text); */
+  font-size: 16px;
+
+}
+

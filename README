@@ -1,0 +1,54 @@
+Readme agregado, si es necesario, podemos usar este archivo para ir documentando cosas importantes del proyecto.
+Nuevo cambio.
+
+
+25/05/2025 - Luchito avances
+La aplicación ya está cerca de su version final, así que a continuacion mencionaré lo nuevo, lo agregado y lo arreglado.
+
+CAMBIO IMPORTANTE
+-Cambié el orden de la ruta que aparecia despues de logearse. En vez de que te aparezca la pantalla de administrador, simplemente vuelve a aparecerte el home pero con botones cambiados en la parte superior derecha, en vez de aparecer los tipicos iniciar sesion y registrarse, creé un condicional que identifica si hay un usuario normal o un admin, si es admin, tendrá la opcion de administrador y cerrar sesion, si es un usuario normal, solo cerrar sesion. 
+Esto facilita y mejora sustancialmente la aplicacion en terminos de vista desde el lado del admin, entrar a la opcion de administrar para luego volver y ver los cambios manteniendo la sesion abierta y sin volver a logearse, es un gran avance!
+
+-Ventana modal para cerrar sesion agregado
+-Estilos para ventana modal de cerrar sesion agregados
+
+ACTUALIZACION IMPORTANTE
+-Sección addCategory agregada junto con todas sus caracteristicas y funcionalidades CRUD; CREATE crear nuevas categorias guardandolas exitosamente en la db, con sistema de condicional para evitar ingresar un campo vacio, una serie de espacios, una categoria repetida ya agregada anteriormente y un limite de 24 caracteres aprox. para mantener el tamaño de las categorias; READ sistema avanzado para obtener get de la tabla de la db, trayendo los datos de manera ascendente y descendente ya sea por orden de id o name, permitiendo al admin guardar este dato en el localstorage para así mantener el orden seleccionado, ya sea id ascendente o descendente o name ascendente o descendente; UPDATE al igual que el CREATE, al actualizar una categoria, esta impacta instantaneamente en la db y en la app, nuevamente se volvió a usar el sistema de condiciones, no permitir un registro vacio, tampoco espacios, no se permiten duplicados y un limite de 24 caracteres; y por ultimo DELETE, borrar categorias nunca fue tan intuitivo, las categorias sin noticias relacionadas, son posibles de borrar instantaneamente, pero para evitar anomalias con las categorias que si tienen noticias relacionadas, preferí mostrar un mensaje que indica que la categoria por borrar no será posible por que tiene "tantas" noticias relacionadas, esto lo mustro haciendo un get adicional a las noticias en donde filtro por categoria para despues pasarla por una funcion lenght para contar cuantas noticias hay relacionadas en dicha categoria, una vez en este punto, reemplazo el boton eliminar por un boton que lleva al administrador al gestor de noticias para que el admin vea si elimina las noticias relacionadas a la categoria, las mueve a otra categoria o las borra directamente para poder eliminar la categoria de manera definitiva.
+
+-Ventanas modales para editar categorias y para eliminar categorias, cada una con su retoque de apariencia.
+
+-FiltroNavBar dinamico; Este cambio viene relacionado con la funcion get avanzada que creé en el administrador de categorias, el filtroNavBar obtiene los valores del localStorage y dependiendo la prioridad de id o name, muestra la lista de categorias en orden alfabetico ascendente o descendente y lo mismo con su numero identificador, de esta manera el administrador de categorias se vuelve más complejo dandole más funciones a parte del CRUD tradicional.
+
+-FiltroNavBar con botones de scroll horizontales; Perfecta funcionalidad, tamaño sutil y animación de desplazamiento smooth.
+
+-categoryRoutes; Creacion de rutas para get, post, put y delete de categorias
+-categoryController; Creacion de controladores funcionales para cada ruta creada
+
+
+26/05/2025
+
+
+-editNotice
+"Noticia de api"
+Edicion funcional; impactando exactamente en el momento de aceptar el cambio:
+Titulo +
+Categoria +
+Contenido +
+Url Imagen +
+
+Eliminacion funcional; Impacta en el acto el cambio.
+Pendiente funcional; De igual modo que edicion y eliminacion, funcionando correctamente.
+
+"Noticia local"
+Edicion completamente funcional!
+Titulo +
+Categoria +
+contenido +
+Url Imagen +
+
+Eliminacion funcional; Elimina la noticia local en el instante.
+
+Effecto desactivador de scroll a abrir ventana modal
+Reajuste a ventanas modales para lograr menores disperfectos visuales
+
+

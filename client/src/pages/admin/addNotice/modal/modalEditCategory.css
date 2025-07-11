@@ -1,0 +1,141 @@
+/* MODAL GENERAL */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  /* text-align: center; */
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+/* CONTENEDOR DEL MODAL */
+.modal-container {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  /* max-height: 90vh; */
+  overflow-y: auto;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* IMAGEN DEL MODAL */
+.modal-image img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* TEXTO DEL MODAL */
+.modal-text h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modal-text p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.modal-content-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.original-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+.original-link:hover {
+  text-decoration: underline;
+}
+
+/* SELECTOR DE CATEGORÍA */
+.modal-category-section select {
+  font-size: 17px;
+  padding: 7px;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1rem;
+}
+
+/* BOTONES */
+.approve-btn-modal {
+  background-color: #10b981;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.approve-btn-modal:hover {
+  background-color: #059669;
+}
+
+.cancel-btn-modal {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-btn-modal:hover {
+  background-color: #dc2626;
+}
+
+/* ERRORES */
+.form-error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}

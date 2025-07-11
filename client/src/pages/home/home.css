@@ -1,0 +1,368 @@
+.noticias-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.noticia {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.noticia-modal {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.noticia:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.noticia img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.noticia-modal img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  border-radius: 30px;
+  max-height: 300px;
+  flex-shrink: 0;
+}
+
+.noticia-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.noticia-content-modal {
+  padding: 20px;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.noticia h2 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #222;
+  line-height: 1.4;
+}
+
+.noticia-modal h2 {
+  margin: 0 0 10px 0;
+  color: #222;
+}
+
+.fuente-autor {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+
+.fecha-noticia {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.fuente-autor-modal {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+
+.noticia p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.noticia-modal p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.noticia a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  text-align: center;
+  margin-top: auto;
+  width: fit-content;
+}
+
+.noticia a:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.leer-mas-btn {
+  cursor: pointer;
+  outline: none;
+  padding: 8px 16px;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  text-align: center;
+  margin-top: auto;
+  width: fit-content;
+}
+
+.leer-mas-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.cargar-mas {
+  text-align: center;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.cargar-mas button {
+  padding: 12px 24px;
+  background-color: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 200px;
+}
+
+.cargar-mas button:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.cargar-mas button:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  border: 2px solid #e0e0e0;
+  transform: none;
+  box-shadow: none;
+}
+
+.no-noticias {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 40px;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  grid-column: 1 / -1;
+  background: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.btn-paginacion {
+  background-color: #4a5568;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-paginacion:hover:not(:disabled) {
+  background-color: #2d3748;
+}
+
+.btn-paginacion:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.info-pagina {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.modalLocalNew {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000b3;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalLocalNew.is-open {
+  display: flex;
+}
+
+.modal-container-localNew {
+  position: relative;
+  width: 750px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  padding: 50px;
+  border-radius: 20px;
+  transition: 0.2s;
+  box-shadow: 10px 10px 1px #10b981;
+  display: flex;
+  flex-direction: column;
+}
+
+.cancel-btn-new {
+  background-color: #10b981;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  flex-shrink: 0;
+}
+
+.cancel-btn-new:hover {
+  background-color: #059669;
+}
+
+.noticia-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.noticia-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.noticia-modal::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 10px;
+}
+
+.noticia-modal::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .noticias-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .noticia img {
+    height: 160px;
+  }
+  
+  .noticia-content {
+    padding: 15px;
+  }
+  
+  .modal-container-localNew {
+    width: 95%;
+    max-width: 500px;
+    padding: 20px;
+    max-height: 90vh;
+  }
+  
+  .noticia-modal img {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .noticias-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .noticia {
+    max-width: 100%;
+  }
+  
+  .cargar-mas button {
+    width: 100%;
+    padding: 14px;
+  }
+  
+  .modal-container-localNew {
+    padding: 15px;
+  }
+  
+  .noticia-modal img {
+    height: 25vh;
+  }
+}

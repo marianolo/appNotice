@@ -1,0 +1,280 @@
+
+
+.edit-category-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Titulo */
+.edit-category-container h1 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #c05422;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.edit-category-container h1::before {
+  font-size: 1.8rem;
+}
+
+
+.edit-category-container h2 {
+  text-align: center;
+}
+
+/* Secciones CRUD */
+.seccion {
+  display: flex;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.seccion button {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  border-right: 1px solid #f0f0f0;
+}
+
+.seccion button:last-child {
+  border-right: none;
+}
+
+.seccion button:hover {
+  background-color: #f5f9ff;
+  color: #c05422;
+}
+
+.seccion button.active {
+  color: #c05422;
+  font-weight: 600;
+  background-color: #fae1e1;
+}
+
+.seccion button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: #c05422;
+  border-radius: 3px 3px 0 0;
+}
+
+@media (max-width: 768px) {
+  .edit-category-container {
+    padding: 1.5rem;
+  }
+  
+  .edit-category-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .seccion {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .edit-category-container {
+    padding: 1rem;
+  }
+  
+}
+
+/* Categoria aprobada */
+.success-category {
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background-color: #d1fae5;
+  color: #065f46;
+  text-align: center;
+}
+
+/* Categoria rechazada */
+.error-category {
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  text-align: center;
+}
+
+/* Estilos para apartado de creacion de categorias */
+
+.creacionContainer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.creacion {
+  background-color: #fae1e1;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 1px #fac7c7;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.creacion p {
+  font-size: 20px;
+  color: #c05422;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.creacion input {
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 1px #fac7c7;
+  color: #c05422;
+  text-align: center;
+}
+
+.creacion input::placeholder {
+  color: #c054229d;
+}
+
+.creacion button {
+  margin-top: 20px;
+  background-color: #c05422;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+  font-size: 17px;
+}
+
+.creacion button:hover {
+  background-color: #10b981;
+}
+
+
+/* Estilos para tabla usada en edicion y eliminacion de categorias */
+
+.tableUpdateDelete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.updateDelete {
+  font-size: 20px;
+}
+
+.updateDelete table {
+  padding: 30px;
+  background-color: #fae1e1;
+  border-radius: 20px;
+  align-items: center;
+  flex-direction: column;
+  border-collapse: collapse;
+  box-shadow: 5px 5px 1px #fac7c7;
+  width: 600px;
+}
+
+.updateDelete th, td {
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;  
+  text-align: center;
+}
+
+.updateDelete th {
+  text-align: center;
+  color: #c05422;
+}
+
+.updateDelete tbody tr:nth-child(even) {
+  background-color: #fac7c7; 
+}
+
+.updateDelete .edit {
+  background-color: #10b981;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+  font-size: 20px;
+
+}
+
+.updateDelete .edit:hover {
+  background-color: #059669;
+}
+
+.updateDelete .del {
+    background-color: #ef4444;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.updateDelete .del:hover {
+  background-color: #dc2626;
+}
+
+/* Ordernar por nombre ASC/DESC */
+.categoriaOrderId {
+  cursor: pointer;
+}
+
+.categoriaOrderId:hover {
+  background-color: #fac7c7;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

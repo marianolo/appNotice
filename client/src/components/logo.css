@@ -1,0 +1,21 @@
+
+.logoMaster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoContainer {
+  /* background-color: #888; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+}
+
+.logoContainer img {  
+  width: 100px;
+  cursor: pointer;
+}
